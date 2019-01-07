@@ -13,9 +13,11 @@ so now, I know how to use the brach to log my learning skills ,let start do some
    大牛解释：
     只负责根据传入的props来展示，不涉及到要state的状态，是一个只带有render方法的组件类，并且在React中组件的名字必须要大写字母开头，而包含该组件定义的文件名也应该是大写字母。
     具体的创建形式如下：
+    ```
       function HelloComponent(props){
         return <div>Hello{props.name}</div>
       }
+     ```
     特点：
       1.无状态组件没有组件实例化的过程，无实例化过程也就不需要分配多余的内存，从而性能得到一定的提升。
       2.无状态组件由于没有实例化过程，所以无法访问组件this中的对象。
@@ -28,4 +30,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
 
 ..........................................................................................................................................
   
+Redux--Connect function 
+  在看Redux的过程中，总会看到Connect这个函数，用于连接store和component，但是总是没有明白其中的原理和作用机制，通过自查资料在这里做个笔记：
+    
 
