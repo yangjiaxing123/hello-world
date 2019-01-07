@@ -32,5 +32,19 @@ so now, I know how to use the brach to log my learning skills ,let start do some
   
 Redux--Connect function 
   在看Redux的过程中，总会看到Connect这个函数，用于连接store和component，但是总是没有明白其中的原理和作用机制，通过自查资料在这里做个笔记：
+    首先要搞懂connect的四个参数
+      ...connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])...
+      但是这里先不做解释，（自己还没搞明白）
+      先看如下代码：
+      ...
+        import {connect} from "react-redux";
+        import Login from "../components/login";
+            export default connect(mapStateToProps,mapDispatchToProps)(Login);
+     ...
+     前者负责输入逻辑，即将state映射到UI组件的参数（props）,后者负责输出逻辑，即将用户对UI组件操作映射成Action这样就创建了一个容器组件
+
+
+      
+  
     
 
