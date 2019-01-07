@@ -25,6 +25,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
 这里就不介绍class HelloComponet extends React.componet这种方式了，没什么好介绍了
 
 <分割符表示这一章结束>
+
 ..........................................................................................................................................
   
 
