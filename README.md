@@ -37,11 +37,23 @@ Redux--Connect function
       但是这里先不做解释，（自己还没搞明白）
       先看如下代码：
       ...
-        import {connect} from "react-redux";
+       > import {connect} from "react-redux";
         import Login from "../components/login";
             export default connect(mapStateToProps,mapDispatchToProps)(Login);
      ...
      前者负责输入逻辑，即将state映射到UI组件的参数（props）,后者负责输出逻辑，即将用户对UI组件操作映射成Action这样就创建了一个容器组件
+        先解释一下connect的前两个参数，以及connect参数为空的时候表达的意思
+          mapStateToProps（state,ownProps）:
+          ---------------
+            在React-Redux中每个模块有自己的State用来统一管理视图数据
+         （1）mapStateToProps 用于将需要的State的节点注入到与此视图数据相关的组件上
+         他会接受一个state作为参数，然后返回一个对象，这个对象是根据state生成的。mapStateToProps相当于告知了Connect应该如何去Store取数据，然后可以把这个函数返回的结果传给被包装的组件。
+         mapStateToProps的第二个参数 ownProps代表组件本身的Props,如果存在第二个参数ownProps，那么当父组件传过来的props改变时，mapStateToProps都会被重新计算
+         （2）mapDispatchToProps
+         mapDispatchToProps用于建立组件跟store.dispatch的映射关系，可以是一个object,也可以传入函数
+          connect()函数生成容器组件
+            const VisibleTodoList=connect()(TodoList)
+            VisibleTodoList就是React-redux通过connect生成的容器组件。
 
 
       
