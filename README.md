@@ -13,8 +13,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
    大牛解释：
     只负责根据传入的props来展示，不涉及到要state的状态，是一个只带有render方法的组件类，并且在React中组件的名字必须要大写字母开头，而包含该组件定义的文件名也应该是大写字母。
     具体的创建形式如下：
-    (```)
-      function HelloComponent(props){
+    (```)function HelloComponent(props){
         return <div>Hello{props.name}</div>
       }
     (```)
