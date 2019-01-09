@@ -49,6 +49,25 @@ so now, I know how to use the brach to log my learning skills ,let start do some
           connect()函数生成容器组件
             const VisibleTodoList=connect()(TodoList)
             VisibleTodoList就是React-redux通过connect生成的容器组件。
+            
+## Redux单向数据流
+  在这里写一下Redux的单向数据流，我们知道根据Redux中的官网教程中，redux主要分三块，action,reducer,store
+    现在按照我自己的意思，写一遍，如果有错误，日后自己牛逼了，再回来改一下
+    首先 款穿三者的主线那自然是State这个妖孽了，因为是单向的，所以action是初始化的过程，声明state的数据格式，基于一些初始化的数据，然后嘞声明一些函数但是并不实现他们，只给他们一些Type例如这样子：
+    ``` Javascript
+      function addTodo(text){
+        return{type:ADD_TODO,text}
+      }
+    ```
+    在这里解释一下，type其实是用来给reducer来实现的，而text则是用来传递数据值的比如`dispatch(addTodo('阳嘉兴'))`
+    这里的'阳嘉兴'就保存到了action.text中通过reducer来实现
+    然后两者之间由store来贯穿，store.dispatch函数来把数据传给reducer的函数，因为reducer是个纯函数所以他返回一个新的state给store,store把新数据渲染到UI组件上，以后每次修改state的时候都按照这个流程走一遍。
+    
+## 展示组件和容器组件
+  到了后面的例子，发现其实action 和reducer里面的代码没变，但是store用容器组件来改变了，在展示组件中，也就是我们平时可以点击接触到的页面中，触发一个action,这个触发事件的实现并不是由展示组件内部实现的，而是由容器组件去调用store.dispatch来实现的，然后reducer返回一个新的state给展示组件。这是我现在接触的这么一个过程。当然可以自己画张图来了解一下。
+    
+    
+    
 
 
       
