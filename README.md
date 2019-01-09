@@ -32,11 +32,11 @@ so now, I know how to use the brach to log my learning skills ,let start do some
       ...connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])...
       但是这里先不做解释，（自己还没搞明白）
       先看如下代码：
-      (```)
+      `
         import {connect} from "react-redux";
         import Login from "../components/login";
             export default connect(mapStateToProps,mapDispatchToProps)(Login);
-     (```)
+     `
      前者负责输入逻辑，即将state映射到UI组件的参数（props）,后者负责输出逻辑，即将用户对UI组件操作映射成Action这样就创建了一个容器组件
         先解释一下connect的前两个参数，以及connect参数为空的时候表达的意思
             在React-Redux中每个模块有自己的State用来统一管理视图数据
