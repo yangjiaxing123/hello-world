@@ -65,7 +65,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
     
 ## 展示组件和容器组件
   到了后面的例子，发现其实action 和reducer里面的代码没变，但是store用容器组件来改变了，在展示组件中，也就是我们平时可以点击接触到的页面中，触发一个action,这个触发事件的实现并不是由展示组件内部实现的，而是由容器组件去调用store.dispatch来实现的，然后reducer返回一个新的state给展示组件。这是我现在接触的这么一个过程。当然可以自己画张图来了解一下。
-   !(https://github.com/youyou-579/123/blob/master/2.8.jpg?raw=true)
+   ![](hello-world/微信图片_20190109150014.png)
     
     
 
