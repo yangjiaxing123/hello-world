@@ -33,7 +33,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
       ...connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])...
       但是这里先不做解释，（自己还没搞明白）
       先看如下代码：
-    ``` Javascript
+    ``` 
         import {connect} from "react-redux";
         import Login from "../components/login";
         export default connect(mapStateToProps,mapDispatchToProps)(Login);
