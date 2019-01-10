@@ -72,9 +72,9 @@ so now, I know how to use the brach to log my learning skills ,let start do some
   首先我们从React的Context出发
     ### Context
       按照我的理解嘞，context就相当于一个全局变量，之前学习React的时候父组件通过props传给子组件，但是如果父组件想把数据传给他的孙子，就需要经过子组件，在传给他的孙子，这样其实也还好，但是如果他的子孙多了呢（代代相传。。），就会变得很麻烦，于是在父组件声明一个context,同时想调用的子组件也自己声明一下在这里父组件的是Index和子组件为Title代码如下：
-      ``` Javascript  
       
-      class Title extends React.Component{
+    ```  Javascript
+    class Title extends React.Component{
         static childContextTypes={
           themeColor:PropTypes.string
         }
@@ -87,9 +87,8 @@ so now, I know how to use the brach to log my learning skills ,let start do some
           return {themeColor:this.state.themeColor}
         }
       }
-      
-    ```
-    首先我们看到 getChildContext()这个函数就是用来声明context的这个过程，返回的的对象{themeColor:this.state.themeColor}就是context,之后的所有子组件都能访问到这个context对象
+     ```   
+  首先我们看到 getChildContext()这个函数就是用来声明context的这个过程，返回的的对象{themeColor:this.state.themeColor}就是context,之后的所有子组件都能访问到这个context对象
     static childContextTypes这个动作的作用是用来验证getChildContext返回的对象，必须的加上。
     调用这个对象的过程时候我们来看下Title组件代码：
    ``` Javascript 
