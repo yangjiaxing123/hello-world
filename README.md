@@ -66,7 +66,45 @@ so now, I know how to use the brach to log my learning skills ,let start do some
 ## 展示组件和容器组件
   到了后面的例子，发现其实action 和reducer里面的代码没变，但是store用容器组件来改变了，在展示组件中，也就是我们平时可以点击接触到的页面中，触发一个action,这个触发事件的实现并不是由展示组件内部实现的，而是由容器组件去调用store.dispatch来实现的，然后reducer返回一个新的state给展示组件。这是我现在接触的这么一个过程。当然可以自己画张图来了解一下。
    ![](https://github.com/yangjiaxing123/hello-world/blob/Redux-connect-function-introduction/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190109150014.png?raw=true)
-    
+   
+## Context和Provider
+最近在看到Redux的Provider提供数据的同时，有点懵逼，不太懂这个函数是个什么鬼，然后查了一下资料，自己简单的写一下
+  首先我们从React的Context出发
+    ### Context
+      按照我的理解嘞，context就相当于一个全局变量，之前学习React的时候父组件通过props传给子组件，但是如果父组件想把数据传给他的孙子，就需要经过子组件，在传给他的孙子，这样其实也还好，但是如果他的子孙多了呢（代代相传。。），就会变得很麻烦，于是在父组件声明一个context,同时想调用的子组件也自己声明一下在这里父组件的是Index和子组件为Title代码如下：
+      ``` JavaScript
+      class Title extends React.Component{
+        static childContextTypes={
+          themeColor:PropTypes.string
+        }
+        construct(){
+          this.state={
+            themeColor:'green'
+          }
+        }
+        getChildContext(){
+          return {themeColor:this.state.themeColor}
+        }
+      }
+    ```
+    首先我们看到 getChildContext()这个函数就是用来声明context的这个过程，返回的的对象{themeColor:this.state.themeColor}就是context,之后的所有子组件都能访问到这个context对象
+    static childContextTypes这个动作的作用是用来验证getChildContext返回的对象，必须的加上。
+    调用这个对象的过程时候我们来看下Title组件代码：
+    ``` JavaScript
+    class Title extends React.Componet{
+      static contextTypes={
+        themeColor:PropTypes.string
+      }
+      render(){
+        return(
+          <p style={{color:this.context.themeColor}}>react.js小书</p>
+        )
+      }
+    }
+   ```
+   子组件想要获取context的内容的话，就必须要写contextTypes来声明和验证你需要获取的状态类型（表示这里没太懂）
+   
+   ###Provider
     
 
 
