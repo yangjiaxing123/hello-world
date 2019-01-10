@@ -109,6 +109,9 @@ so now, I know how to use the brach to log my learning skills ,let start do some
   子组件想要获取context的内容的话，就必须要写contextTypes来声明和验证你需要获取的状态类型（表示这里没太懂）
    
    ###Provider
+    Provider的功能主要有两点：
+      1.在原应用的组件上包裹一层，使原来整个应用成为Provider的子组件
+      2.接收Redux的store作为props,通过context来传给子孙组件上的connect
     
 
 
