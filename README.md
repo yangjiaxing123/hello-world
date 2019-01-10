@@ -90,7 +90,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
     首先我们看到 getChildContext()这个函数就是用来声明context的这个过程，返回的的对象{themeColor:this.state.themeColor}就是context,之后的所有子组件都能访问到这个context对象
     static childContextTypes这个动作的作用是用来验证getChildContext返回的对象，必须的加上。
     调用这个对象的过程时候我们来看下Title组件代码：
-    ``` JavaScript
+    ``` Javascript
     class Title extends React.Componet{
       static contextTypes={
         themeColor:PropTypes.string
@@ -101,8 +101,10 @@ so now, I know how to use the brach to log my learning skills ,let start do some
         )
       }
     }
-   ```
-   子组件想要获取context的内容的话，就必须要写contextTypes来声明和验证你需要获取的状态类型（表示这里没太懂）
+  
+  ```
+  
+  子组件想要获取context的内容的话，就必须要写contextTypes来声明和验证你需要获取的状态类型（表示这里没太懂）
    
    ###Provider
     
