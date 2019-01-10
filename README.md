@@ -33,7 +33,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
       ...connect([mapStateToProps], [mapDispatchToProps], [mergeProps],[options])...
       但是这里先不做解释，（自己还没搞明白）
       先看如下代码：
-    ``` 
+     ``` Javascript 
         import {connect} from "react-redux";
         import Login from "../components/login";
         export default connect(mapStateToProps,mapDispatchToProps)(Login);
@@ -54,7 +54,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
   在这里写一下Redux的单向数据流，我们知道根据Redux中的官网教程中，redux主要分三块，action,reducer,store
     现在按照我自己的意思，写一遍，如果有错误，日后自己牛逼了，再回来改一下
     首先 款穿三者的主线那自然是State这个妖孽了，因为是单向的，所以action是初始化的过程，声明state的数据格式，基于一些初始化的数据，然后嘞声明一些函数但是并不实现他们，只给他们一些Type例如这样子：
-    ``` Javascript
+     ``` Javascript 
       function addTodo(text){
         return{type:ADD_TODO,text}
       }
@@ -72,7 +72,7 @@ so now, I know how to use the brach to log my learning skills ,let start do some
   首先我们从React的Context出发
     ### Context
       按照我的理解嘞，context就相当于一个全局变量，之前学习React的时候父组件通过props传给子组件，但是如果父组件想把数据传给他的孙子，就需要经过子组件，在传给他的孙子，这样其实也还好，但是如果他的子孙多了呢（代代相传。。），就会变得很麻烦，于是在父组件声明一个context,同时想调用的子组件也自己声明一下在这里父组件的是Index和子组件为Title代码如下：
-      ``` JavaScript
+      ``` Javascript 
       class Title extends React.Component{
         static childContextTypes={
           themeColor:PropTypes.string
